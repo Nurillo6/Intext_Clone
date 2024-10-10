@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin</title>
+  <style type="text/tailwindcss">
+    @layer utilities {
+          .content-auto {
+            content-visibility: auto;
+          }
+        }
+    </style>
+</head>
+
+<body class="bg-[#F8F8F8]">
+
+  <div class="flex">
+    <nav class="w-[22%] h-[100vh] overflow-y-auto bg-slate-300">
+      <div class="p-[35px] border-b-[2px] border-slate-500">
+        <img src="./images/logo.svg" alt="Admin logo" width="200" height="48" />
+      </div>
+      <ul class="pt-[33px] pl-[41px] space-y-[15px]">
+        <li>
+          <a class="text-[25px] leading-[35px] text-[#009398]" href="#">Продукты</a>
+        </li>
+        <li>
+          <a class="text-[25px] leading-[35px] text-[#B4B4C6]" href="#">Заказы</a>
+        </li>
+        <li>
+          <a class="text-[25px] leading-[35px] text-[#B4B4C6]" href="#">Категории</a>
+        </li>
+        <li>
+          <a class="text-[25px] leading-[35px] text-[#B4B4C6]" href="#">Сайт</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="w-[78%] h-[100vh] overflow-y-auto">
+      <div class="flex items-center justify-end px-[61px] py-[31.5px] border-b-[2px] border-slate-500 gap-[31px]">
+        <a class="text-[22px] leading-[25px] text-[#B4B4C6] pr-[28px] border-r-[2px] border-[#B4B4C6]" href="#">Просмотр
+          веб-сайта</a>
+        <button onclick="handleLoginBtnClick()" class="flex items-center gap-[10px]">
+          <img src="./images/avatar.svg" alt="Avatar icon" width="18" height="22">
+          <span class="text-[22px] user-logined leading-[25px] text-[#B4B4C6]">Joe Melton</span>
+        </button>
+      </div>
+      <div class="flex items-center justify-between pt-[22px] px-[42px] pb-[40px]">
+        <label class="inline-block flex  w-[377px] py-[11px] pl-[34px] pr-[24px] bg-slate-200 rounded-[30px]">
+          <input
+            autocomplete="off"
+            class="bg-slate-200 search-input py-[14px] text-[23px] leading-[23px] placeholder:text-[23px] placeholder:text-[#B4B4C6] w-[80%] outline-none border-r-[1px] border-[#B4B4C6]"
+            name="searchValue" type="text" placeholder="Найти">
+          <img class="ml-[29px]" src="./images/lupa.svg" alt="Lupa img" width="24" height="24">
+        </label>
+        <button onclick="handleAddProductBtnClick()" class="w-[222px] py-[20px] inline-block bg-[#009398] text-white text-[20px] font-bold text-center font-bold rounded-[30px] mt-[25px]">+ Добавить продукт</button>
+      </div>
+      <ul class="category-list flex items-center justify-center space-x-[46px] mb-[74px]">
+        <li id="1" class="font-bold cursor-pointer text-[35px] leading-10 border-b-[2px] border-[#009398] text-[#009398] pb-2">Каркасные</li>
+        <li id="2" class="font-bold cursor-pointer text-[35px] leading-10 text-[#B4B4C6] border-b-[2px] border-transparent pb-2">Надувные</li>
+      </ul>
+      <div class="px-[42px]">
+        <table class="w-full ">
+          <thead>
+            <tr class="bg-slate-200">
+              <th class="py-[17px] text-center text-[20px] leading-[35px] rounded-tl-[30px] rounded-bl-[30px]">Изображение</th>
+              <th class="py-[17px] text-start text-[20px] leading-[35px]">Цена(сум)</th>
+              <th class="py-[17px] text-start text-[20px] leading-[35px]">Количество</th>
+              <th class="py-[17px] text-start text-[20px] leading-[35px]">Рамка </th>
+              <th class="py-[17px] text-start text-[20px] leading-[35px]">Категория </th>
+              <th class="py-[17px] text-start text-[20px] leading-[35px] rounded-tr-[30px] rounded-br-[30px]">Действия</th>
+            </tr>
+          </thead>
+          <tbody class="pool-tbody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="modal-wrapper scale-0 duration-300 fixed top-0 bottom-0 left-0 right-0 backdrop-blur" id="wrapper">
+    <div class="modal-inner w-[1000px] h-[680px] bg-blue-200 absolute top-0 bottom-0 left-0 right-0 m-auto rounded-[20px]"> </div>
+  </div>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            clifford: '#da373d',
+          }
+        }
+      }
+    }
+  </script>
+  <script src="./js/Admin/admin.js"></script>
+</body>
+
+</html>

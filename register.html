@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
+  <link rel="stylesheet" href="./css/login.css">
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .content-auto {
+        content-visibility: auto;
+      }
+    }
+  </style>
+</head>
+<body class="login-body">
+  
+  <form class="register-form w-[621px] text-center absolute top-0 bottom-0 right-0 left-0 h-[519px] pt-[35px] pb-[46px] px-[37px] shadow-loginShadow bg-white rounded-[25px] m-auto" autocomplete="off">
+    <img class="mb-[17px] mx-auto" src="./images/logo.svg" alt="Site Logo" width="421" height="72">
+    <p class="font-bold mb-[70px] text-[25px] leading-[29px] text-[#A3A3A3]">Введите имя пользователя и пароль, чтобы получить доступ к системе.</p>
+    <input class="w-[359px] mb-[16px] text-[25px] font-bold focus:border-black outline-none py-[12px] rounded-[17px] border-[1px] border-[#A3A3A3] placeholder:text-[#A3A3A3] placeholder:font-bold placeholder:text-[25px] text-center" required type="text" placeholder="Новый Имя пользователя" name="newUsername">
+    <input class="w-[359px] text-[25px] font-bold focus:border-black outline-none py-[12px] rounded-[17px] border-[1px] border-[#A3A3A3] placeholder:text-[#A3A3A3] placeholder:font-bold placeholder:text-[25px] text-center" required type="password" placeholder="Новый Пароль" name="newPassword">
+    <a class="hover:text-[#A3A3A3] hover:border-[#A3A3A3] duration-300 block mt-[20px] text-[25px] font-bold text-[#3F8C8E] border-b-[1px] border-[#3F8C8E] w-[120px] mx-auto" href="/">Войти</a>
+    <button class="w-[300px] inline-block py-[6px] bg-[#3F8C8E] text-white text-[25px] text-center font-bold rounded-[10px] mt-[25px]" type="submit">Зарегистрироваться</button>
+  </form>
+  
+  
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            clifford: '#da373d',
+          }
+        }
+      }
+    }
+  </script>
+  <script src="./js/Admin/register.js"></script>
+</body>
+</html>
